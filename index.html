@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRAESIDIO HEALTH | The strength behind independent medicine</title>
+<meta name="description" content="Praesidio Health is a physician-led healthcare enterprise backing independent medical practices in New Jersey and New York.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E2033; --ink2:#16304A;
+    --teal:#2C8C7D; --teal-deep:#1F6B60; --teal-light:#5BC0AF; --teal-tint:#DCEBE7;
+    --gold:#C2A369;
+    --paper:#F7F4EF; --cream:#FDFBF7; --white:#FFF;
+    --grey:#8C97A3; --line:#E7E1D6;
+    --serif:'Fraunces',Georgia,serif; --sans:'Inter',-apple-system,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.65;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;min-height:100vh}
+  a{color:inherit;text-decoration:none}
+
+  @keyframes wordIn{to{opacity:1;transform:none}}
+  .hero h1 .w{display:inline-block;opacity:0;transform:translateY(34px);animation:wordIn .7s cubic-bezier(.2,.7,.2,1) forwards}
+  @media (prefers-reduced-motion: reduce){svg *{animation:none !important}.hero h1 .w{opacity:1;transform:none;animation:none}}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px 7vw;background:rgba(253,251,247,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav .brand{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:16px;letter-spacing:.14em}
+  nav .brand b{font-weight:500;color:var(--teal-deep)}
+  nav .call{font-size:13.5px;font-weight:600;color:#4A5866}
+  nav .call:hover{color:var(--teal)}
+  nav .cta{background:var(--ink);color:#fff;padding:11px 24px;border-radius:100px;font-size:13.5px;font-weight:600;transition:background .25s}
+  nav .cta:hover{background:var(--teal-deep)}
+  @media(max-width:700px){nav .call{display:none}}
+
+  /* HERO */
+  .hero{position:relative;flex:1;min-height:88vh;display:flex;align-items:center;padding:150px 7vw 90px;background:#DCEBE7;overflow:hidden}
+  .hero .scene{position:absolute;inset:0;width:100%;height:100%}
+  .hero .scene svg{width:100%;height:100%;display:block}
+  .hero .scrim{position:absolute;inset:0;background:linear-gradient(92deg,rgba(247,244,239,.96) 0%,rgba(247,244,239,.82) 34%,rgba(247,244,239,.25) 58%,rgba(247,244,239,0) 72%)}
+  .hero .copy{position:relative;max-width:620px}
+  .hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(44px,5.6vw,86px);line-height:1.03;letter-spacing:-.015em}
+  .hero h1 em{font-style:italic;color:var(--teal)}
+  .hero .sub{margin-top:28px;font-size:18px;color:#36475A;max-width:480px;line-height:1.8}
+  .hero .actions{margin-top:38px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{padding:16px 32px;border-radius:100px;font-weight:600;font-size:14.5px;transition:all .25s;display:inline-block}
+  .btn.dark{background:var(--ink);color:#fff}
+  .btn.dark:hover{background:var(--teal-deep);transform:translateY(-2px)}
+  .btn.ghost{border:1.5px solid var(--ink);color:var(--ink)}
+  .btn.ghost:hover{background:var(--ink);color:#fff;transform:translateY(-2px)}
+  .hero .note{margin-top:16px;font-size:12px;color:#5A6B7A}
+  @media(max-width:900px){.hero .scrim{background:linear-gradient(180deg,rgba(247,244,239,.95) 0%,rgba(247,244,239,.75) 55%,rgba(247,244,239,.2) 100%)}}
+
+  /* PROOF */
+  .proof{background:var(--white);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:36px 7vw;text-align:center}
+  .proof .v{font-family:var(--serif);font-weight:400;font-size:clamp(24px,2.4vw,34px);color:var(--teal-deep);line-height:1}
+  .proof .l{margin-top:8px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey)}
+  @media(max-width:800px){.proof{grid-template-columns:1fr;gap:16px}}
+
+  /* MISSION BAND */
+  .mission{background:var(--teal-deep);color:#fff;text-align:center;padding:34px 7vw}
+  .mission .words{font-family:var(--serif);font-weight:300;font-size:clamp(19px,2.2vw,28px);letter-spacing:.02em}
+  .mission .words em{font-style:italic;color:#BFE3DC}
+  .mission .dot{color:var(--gold);padding:0 .35em}
+
+  /* FOOTER */
+  footer{background:var(--ink);color:rgba(255,255,255,.55);padding:36px 7vw;font-size:11.5px;line-height:1.8}
+  footer .row{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:14px}
+  footer .brand{display:flex;align-items:center;gap:10px;color:#fff;font-family:var(--serif);font-size:14px;letter-spacing:.14em}
+  footer .links{display:flex;gap:22px;font-size:12.5px;font-weight:500;color:rgba(255,255,255,.7)}
+  footer .links a:hover{color:var(--teal-light)}
+  footer .legal{color:rgba(255,255,255,.38)}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <clipPath id="mkclip"><path d="M60 8 C82 18 98 22 104 28 C108 33 108 44 108 58 C108 94 90 120 60 134 C30 120 12 94 12 58 C12 44 12 33 16 28 C22 22 38 18 60 8 Z"/></clipPath>
+  <g id="praesidium">
+    <path d="M60 8 C82 18 98 22 104 28 C108 33 108 44 108 58 C108 94 90 120 60 134 C30 120 12 94 12 58 C12 44 12 33 16 28 C22 22 38 18 60 8 Z" fill="var(--mk-bot)"/>
+    <g clip-path="url(#mkclip)">
+      <path d="M8 74 C45 90 78 48 114 60 L120 60 L120 -5 L0 -5 L0 74 Z" fill="var(--mk-top)"/>
+      <path d="M2 76 C45 92 78 46 118 58" fill="none" stroke="var(--mk-sweep)" stroke-width="9" stroke-linecap="round"/>
+    </g>
+  </g>
+</defs></svg>
+
+<nav>
+  <a class="brand" href="/">
+    <svg width="26" viewBox="0 0 120 140" style="--mk-top:#0E2033;--mk-bot:#2C8C7D;--mk-sweep:#FDFBF7"><use href="#praesidium"/></svg>
+    <span>PRAESIDIO <b>HEALTH</b></span>
+  </a>
+  <a class="cta" href="https://www.atlanticspinecenter.com" target="_blank" rel="noopener">Book an Appointment</a>
+</nav>
+
+<header class="hero">
+  <div class="scene" aria-hidden="true"><svg viewBox="0 0 560 440" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animated illustration of a doctor and patient walking a rising path toward the sun">
+      <style>
+        @keyframes hzSun{to{transform:scale(1.05)}}
+        @keyframes hzHalo{to{transform:scale(1.12)}}
+        @keyframes hzBob{to{transform:translateY(-4px)}}
+        @keyframes hzSwayA{from{transform:rotate(-1.6deg)}to{transform:rotate(1.6deg)}}
+        @keyframes hzSwayF{from{transform:rotate(-4deg)}to{transform:rotate(4deg)}}
+        @keyframes hzDrift{to{transform:translate(26px,-5px)}}
+        @keyframes hzCloud{to{transform:translateX(34px)}}
+        @keyframes hzFlap{to{transform:scaleY(.45)}}
+        @keyframes hzSwing{from{transform:rotate(-9deg)}to{transform:rotate(9deg)}}
+        .hzSun{animation:hzSun 6s ease-in-out infinite alternate;transform-origin:420px 120px}
+        .hzHalo{animation:hzHalo 6s ease-in-out infinite alternate;transform-origin:420px 120px}
+        .hzC1{animation:hzCloud 14s ease-in-out infinite alternate}
+        .hzC2{animation:hzCloud 18s ease-in-out -7s infinite alternate}
+        .hzWalk{animation:hzBob 2.2s ease-in-out infinite alternate}
+        .hzArmA{animation:hzSwing 2.2s ease-in-out infinite alternate;transform-origin:250px 266px}
+        .hzArmB{animation:hzSwing 2.2s ease-in-out -2.2s infinite alternate;transform-origin:288px 256px}
+        .hzT1{animation:hzSwayA 4.5s ease-in-out infinite alternate;transform-origin:90px 334px}
+        .hzT2{animation:hzSwayA 5.2s ease-in-out -2s infinite alternate;transform-origin:480px 262px}
+        .hzFl{animation:hzSwayF 3.4s ease-in-out infinite alternate;transform-origin:342px 396px}
+        .hzB{animation:hzDrift 9s ease-in-out infinite alternate}
+        .hzW1{animation:hzFlap .62s ease-in-out infinite alternate;transform-origin:128px 110px}
+        .hzW2{animation:hzFlap .7s ease-in-out -.2s infinite alternate;transform-origin:149px 122px}
+        .hzW3{animation:hzFlap .66s ease-in-out -.4s infinite alternate;transform-origin:187px 90px}
+        @keyframes hzDraw{to{stroke-dashoffset:0}}
+        .hzDraw{stroke-dasharray:640;stroke-dashoffset:640;animation:hzDraw 1.6s .4s cubic-bezier(.4,0,.2,1) forwards}
+        .hzTrav{offset-path:path('M30 344 C180 372 300 240 530 268');animation:hzTrav 7s linear 1.8s infinite;opacity:0;animation-fill-mode:forwards}
+        @keyframes hzTrav{0%{opacity:1;offset-distance:0%}to{opacity:1;offset-distance:100%}}
+      </style>
+      <rect width="560" height="440" fill="#DCEBE7"/>
+      <g class="hzC1" fill="#FFFFFF" opacity=".6">
+        <circle cx="104" cy="86" r="16"/><circle cx="128" cy="78" r="21"/><circle cx="152" cy="88" r="14"/><rect x="92" y="84" width="72" height="16" rx="8"/>
+      </g>
+      <g class="hzC2" fill="#FFFFFF" opacity=".45">
+        <circle cx="298" cy="58" r="11"/><circle cx="315" cy="52" r="14"/><circle cx="332" cy="60" r="10"/><rect x="290" y="56" width="52" height="12" rx="6"/>
+      </g>
+      <circle class="hzHalo" cx="420" cy="120" r="78" fill="#C2A369" opacity=".18"/>
+      <circle class="hzSun" cx="420" cy="120" r="58" fill="#C2A369"/>
+      <path d="M0 302 C90 268 180 290 290 264 C390 242 480 254 560 230 L560 440 L0 440 Z" fill="#A8D5CC"/>
+      <path d="M0 330 C120 290 200 320 320 292 C420 269 500 280 560 258 L560 440 L0 440 Z" fill="#2C8C7D"/>
+      <path d="M0 372 C140 340 260 366 380 340 C470 321 520 330 560 316 L560 440 L0 440 Z" fill="#1F6B60"/>
+      <path class="hzDraw" d="M30 344 C180 372 300 240 530 268" fill="none" stroke="#FDFBF7" stroke-width="10" stroke-linecap="round"/>
+      <circle class="hzTrav" r="6" fill="#C2A369"/>
+      <g class="hzT1">
+        <rect x="86" y="300" width="8" height="34" rx="3" fill="#16304A"/>
+        <circle cx="76" cy="294" r="16" fill="#5BC0AF"/><circle cx="104" cy="295" r="15" fill="#5BC0AF"/><circle cx="90" cy="280" r="23" fill="#5BC0AF"/>
+        <circle cx="98" cy="272" r="10" fill="#BFE3DC" opacity=".8"/>
+      </g>
+      <g class="hzT2">
+        <rect x="477" y="238" width="6" height="26" rx="3" fill="#16304A"/>
+        <circle cx="470" cy="232" r="12" fill="#5BC0AF"/><circle cx="491" cy="233" r="11" fill="#5BC0AF"/><circle cx="480" cy="221" r="17" fill="#5BC0AF"/>
+        <circle cx="486" cy="215" r="7" fill="#BFE3DC" opacity=".8"/>
+      </g>
+      <circle cx="190" cy="394" r="11" fill="#17564D"/><circle cx="206" cy="399" r="14" fill="#17564D"/><circle cx="221" cy="394" r="10" fill="#17564D"/>
+      <g class="hzFl">
+        <path d="M334 396 V380 M342 398 V376 M350 396 V382" stroke="#16304A" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="334" cy="377" r="4" fill="#C2A369"/><circle cx="342" cy="373" r="4.5" fill="#FDFBF7"/><circle cx="350" cy="379" r="4" fill="#5BC0AF"/>
+      </g>
+      <g class="hzWalk">
+        <ellipse cx="240" cy="328" rx="19" ry="4.5" fill="#0E2033" opacity=".12"/>
+        <rect x="229" y="298" width="7" height="26" rx="3.5" fill="#16304A"/>
+        <rect x="228" y="320" width="11" height="5" rx="2.5" fill="#16304A"/>
+        <rect x="243" y="300" width="7" height="24" rx="3.5" fill="#0E2033"/>
+        <rect x="242" y="320" width="12" height="5" rx="2.5" fill="#0E2033"/>
+        <rect x="225" y="264" width="7" height="25" rx="3.5" fill="#E7E1D6"/>
+        <path d="M240 252 C232 252 227 256 226 263 L223 300 C223 304 226 306 230 306 L250 306 C254 306 257 304 257 300 L254 263 C253 256 248 252 240 252 Z" fill="#F7F4EF"/>
+        <path d="M239 258 L237 304" stroke="#DCEBE7" stroke-width="2"/>
+        <path d="M233 253 L239 261 L239 253 Z" fill="#DCEBE7"/>
+        <path d="M247 253 L240 261 L245 253 Z" fill="#E7E1D6"/>
+        <path d="M233 257 C233 270 240 272 241 276" fill="none" stroke="#16304A" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="241" cy="279" r="3" fill="#2C8C7D"/>
+        <rect x="236.5" y="243" width="7" height="8" rx="2.5" fill="#EFE6D6"/>
+        <circle cx="240" cy="237" r="9.5" fill="#EFE6D6"/>
+        <path d="M230.5 236 a9.5 9.5 0 0 1 19 0 q-4.5 -5.5 -9.5 -5.5 t-9.5 5.5 Z" fill="#16304A"/>
+        <g class="hzArmA">
+          <rect x="247" y="264" width="7" height="27" rx="3.5" fill="#F7F4EF"/>
+          <circle cx="250.5" cy="292" r="3.2" fill="#EFE6D6"/>
+        </g>
+        <ellipse cx="284" cy="318" rx="17" ry="4" fill="#0E2033" opacity=".12"/>
+        <rect x="274" y="288" width="7" height="26" rx="3.5" fill="#16304A"/>
+        <rect x="273" y="310" width="11" height="5" rx="2.5" fill="#16304A"/>
+        <rect x="287" y="290" width="7" height="24" rx="3.5" fill="#0E2033"/>
+        <rect x="286" y="310" width="12" height="5" rx="2.5" fill="#0E2033"/>
+        <rect x="269" y="254" width="7" height="24" rx="3.5" fill="#1F6B60"/>
+        <path d="M284 244 C277 244 272 248 271 255 L269 290 C269 294 272 296 276 296 L292 296 C296 296 299 294 299 290 L297 255 C296 248 291 244 284 244 Z" fill="#2C8C7D"/>
+        <path d="M284 246 L281 253 L287 253 Z" fill="#1F6B60"/>
+        <path d="M277 251 C285 262 291 272 295 281" fill="none" stroke="#16304A" stroke-width="2"/>
+        <rect x="291" y="281" width="11" height="9" rx="3" fill="#C2A369"/>
+        <rect x="280.5" y="235" width="7" height="8" rx="2.5" fill="#EFE6D6"/>
+        <circle cx="284" cy="229" r="9.5" fill="#EFE6D6"/>
+        <path d="M274.5 228 a9.5 9.5 0 0 1 19 0 q-4.5 -5.5 -9.5 -5.5 t-9.5 5.5 Z" fill="#0E2033"/>
+        <circle cx="293.5" cy="221.5" r="4.2" fill="#0E2033"/>
+        <g class="hzArmB">
+          <rect x="285" y="254" width="7" height="26" rx="3.5" fill="#2C8C7D"/>
+          <circle cx="288.5" cy="281" r="3.2" fill="#EFE6D6"/>
+        </g>
+      </g>
+      <g class="hzB" stroke="#16304A" stroke-width="3" fill="none" stroke-linecap="round">
+        <path class="hzW1" d="M120 110 q8 -9 16 0"/>
+        <path class="hzW2" d="M142 122 q7 -8 14 0"/>
+        <path class="hzW3" d="M180 90 q7 -8 14 0"/>
+      </g>
+    </svg></div>
+  <div class="scrim" aria-hidden="true"></div>
+  <div class="copy">
+    <h1><span class="w" style="animation-delay:.05s">Great</span> <span class="w" style="animation-delay:.14s">doctors</span> <span class="w" style="animation-delay:.23s">who</span> <span class="w" style="animation-delay:.32s">answer</span> <span class="w" style="animation-delay:.41s"><em>to you.</em></span></h1>
+    <p class="sub">Not to a hospital system. Praesidio Health is the strength behind independent medicine, backing the practices and people who keep care personal.</p>
+    <div class="actions">
+      <a class="btn dark" href="https://www.atlanticspinecenter.com" target="_blank" rel="noopener">Find a Doctor</a>
+      <a class="btn ghost" href="mailto:hello@atlanticspinecenter.com">For Physicians &amp; Practices</a>
+    </div>
+    <p class="note">Full site launching soon. Serving New Jersey, New York City, and Florida.</p>
+  </div>
+</header>
+
+<!-- NOTE (internal): placeholder figures below; replace with verified numbers before launch -->
+<div class="proof">
+  <div><div class="v">20+ years</div><div class="l">of spine &amp; outpatient surgical care</div></div>
+  <div><div class="v">35,000+</div><div class="l">procedures across the family</div></div>
+  <div><div class="v">Same-week</div><div class="l">appointments at affiliated practices</div></div>
+</div>
+
+<div class="mission">
+  <div class="words">Prevention <span class="dot">·</span> Innovation <span class="dot">·</span> <em>Excellence</em></div>
+</div>
+
+<footer>
+  <div class="row">
+    <div class="brand">
+      <svg width="22" viewBox="0 0 120 140" style="--mk-top:#183654;--mk-bot:#2C8C7D;--mk-sweep:#0E2033"><use href="#praesidium"/></svg>
+      PRAESIDIO HEALTH
+    </div>
+    <div class="links">
+      <a href="https://www.atlanticspinecenter.com" target="_blank" rel="noopener">Atlantic Spine Center</a>
+      <a href="mailto:hello@atlanticspinecenter.com">hello@atlanticspinecenter.com</a>
+    </div>
+  </div>
+  <div class="legal">
+    © 2026 Praesidio Health LLC. All rights reserved. Praesidio Health LLC (formerly Healthimax LLC) owns MD360. Medical practices and ambulatory surgery centers, including Atlantic Spine Center and Park Avenue Ambulatory Medical PC, are independently owned and licensed clinical entities managed by Praesidio Health LLC under applicable agreements. Praesidio Health does not own, practice through, or contract on behalf of any medical practice or ambulatory surgery center.
+  </div>
+</footer>
+
+</body>
+</html>
