@@ -117,10 +117,12 @@
   .mission .dot{color:var(--gold);padding:0 .35em}
   .mission .sites{margin-top:18px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
   .mission .sites .lbl{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-right:6px}
-  .mission .sites a{display:inline-flex;align-items:center;gap:8px;background:#FFFFFF;border-radius:100px;padding:7px 16px;opacity:.9;transition:opacity .25s,transform .25s}
-  .mission .sites a:hover{opacity:1;transform:translateY(-1px)}
-  .mission .sites img{height:20px;width:auto;display:block}
-  .mission .sites .asc-name{font-family:Georgia,'Times New Roman',serif;font-size:12.5px;letter-spacing:.04em;color:#226696;white-space:nowrap}
+    .mission .sites a{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:12px 18px;text-align:left;transition:background .25s}
+  .mission .sites a:hover{background:rgba(255,255,255,.14)}
+  .mission .sites .thumb{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;background:#FFFFFF;flex:0 0 auto;overflow:hidden}
+  .mission .sites .thumb img{max-width:30px;max-height:30px;width:auto;height:auto;display:block}
+  .mission .sites .t{font-size:13.5px;font-weight:600;color:#fff;line-height:1.35;font-family:var(--sans)}
+  .mission .sites .t .sub{display:block;font-size:10.5px;font-weight:500;color:rgba(255,255,255,.55);letter-spacing:.04em}
 
   /* FOOTER */
   footer{background:var(--ink);color:rgba(255,255,255,.55);padding:36px 7vw;font-size:11.5px;line-height:1.8}
@@ -319,9 +321,9 @@
   <div class="words">Prevention <span class="dot">·</span> Innovation <span class="dot">·</span> <em>Excellence</em></div>
   <div class="sites">
     <span class="lbl">The Praesidio Network</span>
-    <a href="https://www.md360.com" target="_blank" rel="noopener" aria-label="MD360"><img src="https://md360.com/assets/images/md360-logo-w-text-colorful-3zEq2C8P.svg" alt="MD360" loading="lazy"></a>
-    <a href="https://www.atlanticspinecenter.com" target="_blank" rel="noopener" aria-label="Atlantic Spine Center"><img src="https://www.atlanticspinecenter.com/icons/icon-96x96.png" alt="" loading="lazy"><span class="asc-name">Atlantic Spine Center</span></a>
-    <a href="https://advancedspine.com" target="_blank" rel="noopener" aria-label="Advanced Spine and Outpatient Surgery Center"><img src="https://advancedspine.com/wp-content/uploads/2021/08/logo.png" alt="Advanced Spine and Outpatient Surgery Center" loading="lazy" style="height:26px"></a>
+        <a href="https://www.md360.com" target="_blank" rel="noopener"><span class="thumb"><img src="https://md360.com/assets/images/md360-logo-w-text-colorful-3zEq2C8P.svg" alt="MD360" loading="lazy"></span><span class="t">MD360<span class="sub">Network technology platform</span></span></a>
+    <a href="https://www.atlanticspinecenter.com" target="_blank" rel="noopener"><span class="thumb"><img src="https://www.atlanticspinecenter.com/icons/icon-96x96.png" alt="Atlantic Spine Center" loading="lazy"></span><span class="t">Atlantic Spine Center<span class="sub">Spine &amp; pain care</span></span></a>
+    <a href="https://advancedspine.com" target="_blank" rel="noopener"><span class="thumb"><img src="https://advancedspine.com/wp-content/uploads/2021/08/logo.png" alt="Advanced Spine and Outpatient Surgery Center" loading="lazy"></span><span class="t">Advanced Spine<span class="sub">Outpatient surgery center</span></span></a>
   </div>
 </div>
 
