@@ -55,6 +55,48 @@
   .hero .note{margin-top:16px;font-size:12px;color:#5A6B7A}
   @media(max-width:900px){.hero .scrim{background:linear-gradient(180deg,rgba(247,244,239,.95) 0%,rgba(247,244,239,.75) 55%,rgba(247,244,239,.2) 100%)}}
 
+  .hero .search{margin-top:34px;display:flex;gap:10px;max-width:520px}
+  .hero .search input{flex:1;padding:16px 24px;border:1.5px solid var(--line);border-radius:100px;font-size:15px;font-family:var(--sans);background:var(--white);outline:none}
+  .hero .search input:focus{border-color:var(--teal)}
+  .hero .search button{padding:16px 30px;border-radius:100px;border:none;background:var(--ink);color:#fff;font-family:var(--sans);font-size:14.5px;font-weight:600;cursor:pointer;transition:background .25s}
+  .hero .search button:hover{background:var(--teal-deep)}
+  .hero .pop{margin-top:14px;font-size:13px;color:#4A5866}
+  .hero .pop button{background:none;border:none;color:var(--teal-deep);font-weight:600;font-size:13px;cursor:pointer;font-family:var(--sans);padding:0 2px}
+  .hero .pop button:hover{color:var(--teal)}
+
+  /* FIND CARE */
+  .findcare{background:var(--white);padding:70px 7vw}
+  .findcare .eyebrow{font-size:11.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:16px}
+  .findcare h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.2vw,42px);line-height:1.1;letter-spacing:-.01em;margin-bottom:12px}
+  .findcare h2 em{font-style:italic;color:var(--teal)}
+  .fc-stats{font-size:14px;color:#435362}
+  .fc-stats b{font-family:var(--serif);font-size:18px;color:var(--teal-deep);padding:0 2px}
+  .fc-bar{margin-top:22px;display:flex;gap:16px 40px;flex-wrap:wrap;align-items:center}
+  .fc-input{flex:1 1 300px;max-width:420px;padding:14px 24px;border:1.5px solid var(--line);border-radius:100px;font-size:14.5px;font-family:var(--sans);color:var(--ink);background:var(--cream);outline:none;transition:border-color .2s}
+  .fc-input:focus{border-color:var(--teal)}
+  .fc-group{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .fc-lab{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);font-weight:600;white-space:nowrap}
+  .fc-pills{display:flex;gap:8px;flex-wrap:wrap}
+  .fc-pill{padding:7px 15px;border-radius:100px;border:1.5px solid var(--line);font-size:12px;font-weight:600;cursor:pointer;background:var(--white);color:#4A5866;transition:all .2s;font-family:var(--sans)}
+  .fc-pill:hover{border-color:var(--teal)}
+  .fc-pill.on{background:var(--ink);border-color:var(--ink);color:#fff}
+  @keyframes cardIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  .fc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+  .fc-card{border:1px solid var(--line);border-radius:16px;padding:20px 24px;background:var(--cream);display:flex;flex-direction:column;gap:4px;transition:transform .3s,box-shadow .3s;animation:cardIn .5s cubic-bezier(.2,.7,.2,1) both}
+  .fc-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px -20px rgba(14,32,51,.18)}
+  .fc-card .top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .fc-card .dr{font-family:var(--serif);font-size:17.5px;font-weight:500}
+  .fc-card .sp{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:600}
+  .fc-card .pr{font-size:12.5px;color:#4A5866;font-weight:600}
+  .fc-card .locs{font-size:11.5px;color:var(--grey)}
+  .fc-card .book{flex:0 0 auto;padding:8px 16px;border-radius:100px;background:var(--ink);color:#fff;font-size:11.5px;font-weight:600;transition:background .25s}
+  .fc-card .book:hover{background:var(--teal-deep)}
+  .fc-more{display:none;margin:16px auto 0;padding:10px 26px;border-radius:100px;border:1.5px solid var(--ink);background:none;color:var(--ink);font-family:var(--sans);font-size:13px;font-weight:600;cursor:pointer;transition:all .25s}
+  .fc-more:hover{background:var(--ink);color:#fff}
+  .fc-empty{margin-top:30px;font-size:15px;color:var(--grey);display:none}
+  .fc-note{margin-top:16px;font-size:11.5px;color:var(--grey)}
+  @media(max-width:950px){.fc-grid{grid-template-columns:1fr}}
+
   /* PROOF */
   .proof{background:var(--white);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:36px 7vw;text-align:center}
   .proof .v{font-family:var(--serif);font-weight:400;font-size:clamp(24px,2.4vw,34px);color:var(--teal-deep);line-height:1}
@@ -100,7 +142,7 @@
     <svg width="26" viewBox="0 0 120 140" style="--mk-top:#0E2033;--mk-bot:#2C8C7D;--mk-sweep:#FDFBF7"><use href="#praesidium"/></svg>
     <span>PRAESIDIO <b>HEALTH</b></span>
   </a>
-  <a class="cta" href="https://www.atlanticspinecenter.com" target="_blank" rel="noopener">Book an Appointment</a>
+  <a class="cta" href="#find-care">Book an Appointment</a>
 </nav>
 
 <header class="hero">
@@ -213,10 +255,11 @@
     <div class="eyebrow">A Physician-Led Healthcare Enterprise</div>
     <h1><span class="w" style="animation-delay:.05s">Built on prevention.</span><br><span class="w" style="animation-delay:.22s">Driven by innovation.</span><br><span class="w" style="animation-delay:.39s"><em>Measured by excellence.</em></span></h1>
     <p class="sub">Praesidio Health is the strength behind a network of independent practices with one shared mission: relieve pain, restore function, and bring hope to every patient.</p>
-    <div class="actions">
-      <a class="btn dark" href="https://www.atlanticspinecenter.com" target="_blank" rel="noopener">Find a Doctor</a>
-      <a class="btn ghost" href="mailto:hello@atlanticspinecenter.com">For Physicians &amp; Practices</a>
+    <div class="search">
+      <input id="heroSearch" type="text" placeholder="Search doctors, specialties…" aria-label="Search doctors and specialties">
+      <button id="heroGo" type="button">Find care</button>
     </div>
+    <p class="pop">Popular: <button type="button" onclick="fcPreset('Spine Surgery')">Spine Surgery</button> · <button type="button" onclick="fcPreset('Pain Management')">Pain Management</button> · <a href="#find-care" style="color:var(--teal-deep);font-weight:600">All doctors</a></p>
     <p class="note">Full site launching soon. Serving New Jersey, New York City, and Florida.</p>
   </div>
 </header>
@@ -227,6 +270,35 @@
   <div><div class="v">35,000+</div><div class="l">procedures across the network</div></div>
   <div><div class="v">Same-week</div><div class="l">appointments at network practices</div></div>
 </div>
+
+<section class="findcare" id="find-care">
+  <div class="eyebrow">Find Care</div>
+  <h2>The right doctor. <em>One search.</em></h2>
+  <p class="fc-stats">Now connecting <b id="statDocs">0</b> physicians across <b id="statStates">0</b> states and <b id="statSpecs">0</b> specialties.</p>
+
+  <div class="fc-bar">
+    <input class="fc-input" id="fcSearch" type="text" placeholder="Search by doctor name…" aria-label="Search by doctor name">
+    <div class="fc-group"><span class="fc-lab">Specialty</span>
+    <div class="fc-pills" id="fcSpec">
+    <button class="fc-pill on" data-v="All">All</button>
+    <button class="fc-pill" data-v="Spine Surgery">Spine Surgery</button>
+    <button class="fc-pill" data-v="Pain Management">Pain Management</button>
+  </div></div>
+    <div class="fc-group"><span class="fc-lab">Location</span>
+    <div class="fc-pills" id="fcLoc">
+    <button class="fc-pill on" data-v="All">All</button>
+    <button class="fc-pill" data-v="New Jersey">New Jersey</button>
+    <button class="fc-pill" data-v="New York">New York</button>
+    <button class="fc-pill" data-v="Florida">Florida</button>
+    <button class="fc-pill" data-v="Texas">Texas · Coming Soon</button>
+  </div></div>
+  </div>
+
+  <div class="fc-grid" id="fcGrid"></div>
+  <div style="text-align:center"><button class="fc-more" id="fcMore" type="button">Show all specialists</button></div>
+  <p class="fc-empty" id="fcEmpty">No providers match that search yet. Texas locations are coming soon. Try New Jersey or Florida, or clear a filter.</p>
+  <p class="fc-note">Appointments are booked directly with each independently owned medical practice.</p>
+</section>
 
 <div class="mission">
   <div class="words">Prevention <span class="dot">·</span> Innovation <span class="dot">·</span> <em>Excellence</em></div>
@@ -255,6 +327,95 @@
     © 2026 Praesidio Health LLC. All rights reserved. Praesidio Health supports a network of independently owned healthcare organizations, including Atlantic Spine Center, Advanced Spine &amp; Outpatient Surgical Center, Park Avenue Ambulatory Medical PC, and MD360. Each member of the network is independently owned and operated; medical care is provided solely by licensed clinical entities and their physicians. Praesidio Health does not own, practice through, or contract on behalf of any medical practice or ambulatory surgery center.
   </div>
 </footer>
+
+<script>
+  const PRACTICE_LINKS = {
+    "Atlantic Spine Center": "https://www.atlanticspinecenter.com"
+  };
+  const PROVIDERS = [
+    {name:"Kaixuan Liu, MD, PhD", spec:"Spine Surgery", practice:"Atlantic Spine Center", locs:["New Jersey","New York","Florida"]},
+    {name:"Kaixuan Liu, MD, PhD", spec:"Pain Management", practice:"Atlantic Spine Center", locs:["Florida"]},
+    {name:"Praveen Kadimcherla, MD", spec:"Spine Surgery", practice:"Atlantic Spine Center", locs:["New Jersey"]},
+    {name:"Fabien Bitan, MD", spec:"Spine Surgery", practice:"Atlantic Spine Center", locs:["New York","New Jersey"]},
+    {name:"Kaliq Chang, MD", spec:"Pain Management", practice:"Atlantic Spine Center", locs:["New Jersey"]},
+    {name:"Jason Arora, DO", spec:"Pain Management", practice:"Atlantic Spine Center", locs:["New Jersey"]}
+  ];
+  const fcGrid = document.getElementById('fcGrid');
+  const fcEmpty = document.getElementById('fcEmpty');
+  const fcSearch = document.getElementById('fcSearch');
+  let fSpec = "All", fLoc = "All", fcExpanded = false;
+  const fcMore = document.getElementById('fcMore');
+  fcMore.addEventListener('click', () => { fcExpanded = true; fcRender(); });
+
+  function fcRender(){
+    const q = fcSearch.value.trim().toLowerCase();
+    const rows = PROVIDERS.filter(p =>
+      (fSpec === "All" || p.spec === fSpec) &&
+      (fLoc === "All" || p.locs.includes(fLoc)) &&
+      (!q || p.name.toLowerCase().includes(q) || p.practice.toLowerCase().includes(q))
+    );
+    const shown = fcExpanded ? rows : rows.slice(0, 3);
+    fcGrid.innerHTML = shown.map((p, i) => `
+      <div class="fc-card" style="animation-delay:${i * 60}ms">
+        <div class="top"><div class="dr">${p.name}</div>
+        <a class="book" href="${PRACTICE_LINKS[p.practice] || '#'}" target="_blank" rel="noopener">Book</a></div>
+        <div class="sp">${p.spec}</div>
+        <div class="pr">${p.practice} · <span class="locs">${p.locs.join(" | ")}</span></div>
+      </div>`).join("");
+    fcMore.style.display = (!fcExpanded && rows.length > 3) ? "inline-block" : "none";
+    fcMore.textContent = `Show all ${rows.length} specialists`;
+    fcEmpty.style.display = rows.length ? "none" : "block";
+  }
+  function fcWirePills(id, setter){
+    const wrap = document.getElementById(id);
+    wrap.addEventListener('click', e => {
+      const btn = e.target.closest('.fc-pill'); if(!btn) return;
+      wrap.querySelectorAll('.fc-pill').forEach(b => b.classList.remove('on'));
+      btn.classList.add('on');
+      setter(btn.dataset.v);
+      fcRender();
+    });
+  }
+  fcWirePills('fcSpec', v => fSpec = v);
+  fcWirePills('fcLoc', v => fLoc = v);
+  fcSearch.addEventListener('input', fcRender);
+  fcRender();
+
+  const heroInput = document.getElementById('heroSearch');
+  const heroGoBtn = document.getElementById('heroGo');
+  function heroSubmit(){
+    fcSearch.value = heroInput.value.trim(); fcExpanded = true; fcRender();
+    document.getElementById('find-care').scrollIntoView({behavior:'smooth'});
+  }
+  heroGoBtn.addEventListener('click', heroSubmit);
+  heroInput.addEventListener('keydown', e => { if(e.key === 'Enter') heroSubmit(); });
+
+  function fcPreset(spec){
+    fSpec = spec; fLoc = "All"; fcSearch.value = ""; fcExpanded = false;
+    document.querySelectorAll('#fcSpec .fc-pill').forEach(b => b.classList.toggle('on', b.dataset.v === spec));
+    document.querySelectorAll('#fcLoc .fc-pill').forEach(b => b.classList.toggle('on', b.dataset.v === "All"));
+    fcRender();
+    document.getElementById('find-care').scrollIntoView({behavior:'smooth'});
+  }
+  window.fcPreset = fcPreset;
+
+  function countUp(el, target){
+    const t0 = performance.now(), dur = 900;
+    (function tick(now){
+      const k = Math.min((now - t0) / dur, 1);
+      el.textContent = Math.round(target * (1 - Math.pow(1 - k, 3)));
+      if(k < 1) requestAnimationFrame(tick);
+    })(t0);
+  }
+  const statIO = new IntersectionObserver(es => {
+    if(!es[0].isIntersecting) return;
+    countUp(document.getElementById('statDocs'), new Set(PROVIDERS.map(p => p.name)).size);
+    countUp(document.getElementById('statStates'), new Set(PROVIDERS.flatMap(p => p.locs)).size);
+    countUp(document.getElementById('statSpecs'), new Set(PROVIDERS.map(p => p.spec)).size);
+    statIO.disconnect();
+  }, {threshold:.4});
+  statIO.observe(document.getElementById('find-care'));
+</script>
 
 </body>
 </html>
