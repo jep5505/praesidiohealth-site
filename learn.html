@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn | Praesidio Health</title>
+<meta name="description" content="Plain-language education on spine conditions and treatments from the independently owned practices of the Praesidio Health network.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E2033; --ink2:#16304A;
+    --teal:#2C8C7D; --teal-deep:#1F6B60; --teal-light:#5BC0AF; --teal-tint:#DCEBE7;
+    --gold:#C2A369;
+    --paper:#F7F4EF; --cream:#FDFBF7; --white:#FFF;
+    --grey:#8C97A3; --line:#E7E1D6;
+    --serif:'Fraunces',Georgia,serif; --sans:'Inter',-apple-system,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px 7vw;background:rgba(253,251,247,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav .brand{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:16px;letter-spacing:.14em}
+  nav .brand b{font-weight:500;color:var(--teal-deep)}
+  nav .right{display:flex;align-items:center;gap:26px}
+  nav .lnk{font-size:13.5px;font-weight:600;color:#4A5866}
+  nav .lnk:hover{color:var(--teal)}
+  nav .cta{background:var(--ink);color:#fff;padding:11px 24px;border-radius:100px;font-size:13.5px;font-weight:600;transition:background .25s}
+  nav .cta:hover{background:var(--teal-deep)}
+
+  header.page{padding:150px 7vw 60px;background:var(--paper);border-bottom:1px solid var(--line)}
+  .eyebrow{font-size:11.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:16px}
+  header.page h1{font-family:var(--serif);font-weight:300;font-size:clamp(34px,4.4vw,60px);line-height:1.12;letter-spacing:-.015em;max-width:760px}
+  header.page h1 em{font-style:italic;color:var(--teal)}
+  header.page .lede{margin-top:20px;font-size:17px;color:#435362;max-width:620px;line-height:1.8}
+
+  section{padding:70px 7vw}
+  h2{font-family:var(--serif);font-weight:400;font-size:clamp(26px,3vw,38px);line-height:1.1;letter-spacing:-.01em;margin-bottom:10px}
+  h2 em{font-style:italic;color:var(--teal)}
+  .sub{font-size:15px;color:#435362;max-width:640px;margin-bottom:36px}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
+  .card:hover{transform:translateY(-5px);box-shadow:0 20px 42px -22px rgba(14,32,51,.18)}
+  .card h3{font-family:var(--serif);font-weight:500;font-size:19px;margin-bottom:8px}
+  .card p{font-size:13.5px;color:#4A5866;line-height:1.7}
+  .card .go{margin-top:auto;padding-top:16px;font-weight:600;font-size:13px;color:var(--teal-deep)}
+  .card:hover .go{color:var(--teal)}
+  @media(max-width:950px){.grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:640px){.grid{grid-template-columns:1fr}}
+
+  .treat{background:var(--paper)}
+
+  .faq{background:var(--white)}
+  .faq-list{max-width:860px;margin-top:10px}
+  .faq-item{border-top:1px solid var(--line)}
+  .faq-item:last-child{border-bottom:1px solid var(--line)}
+  .faq-item summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 4px;font-weight:600;font-size:16px;color:var(--ink)}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary:after{content:"+";font-family:var(--serif);font-size:24px;color:var(--teal);transition:transform .25s}
+  .faq-item[open] summary:after{transform:rotate(45deg)}
+  .faq-item p{padding:0 4px 24px;font-size:14.5px;line-height:1.8;color:#4A5866;max-width:760px}
+
+  .ctaband{background:var(--teal-deep);color:#fff;text-align:center;padding:70px 7vw}
+  .ctaband h2{color:#fff;margin-bottom:10px}
+  .ctaband h2 em{color:#BFE3DC}
+  .ctaband p{color:rgba(255,255,255,.75);max-width:520px;margin:0 auto 30px;font-size:15.5px;line-height:1.8}
+  .btn{display:inline-block;padding:15px 32px;border-radius:100px;font-weight:600;font-size:14px;background:var(--cream);color:var(--ink);transition:transform .25s}
+  .btn:hover{transform:translateY(-2px)}
+
+  .note{padding:26px 7vw;background:var(--cream);font-size:11.5px;color:var(--grey);line-height:1.8;max-width:1100px}
+
+  footer{background:var(--ink);color:rgba(255,255,255,.55);padding:36px 7vw;font-size:11.5px;line-height:1.8}
+  footer .row{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:14px}
+  footer .brand{display:flex;align-items:center;gap:10px;color:#fff;font-family:var(--serif);font-size:14px;letter-spacing:.14em}
+  footer .links{display:flex;gap:22px;font-size:12.5px;font-weight:500;color:rgba(255,255,255,.7)}
+  footer .links a:hover{color:var(--teal-light)}
+  footer .legal{color:rgba(255,255,255,.38)}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <clipPath id="mkclip"><path d="M60 8 C82 18 98 22 104 28 C108 33 108 44 108 58 C108 94 90 120 60 134 C30 120 12 94 12 58 C12 44 12 33 16 28 C22 22 38 18 60 8 Z"/></clipPath>
+  <g id="praesidium">
+    <path d="M60 8 C82 18 98 22 104 28 C108 33 108 44 108 58 C108 94 90 120 60 134 C30 120 12 94 12 58 C12 44 12 33 16 28 C22 22 38 18 60 8 Z" fill="var(--mk-bot)"/>
+    <g clip-path="url(#mkclip)">
+      <path d="M8 74 C45 90 78 48 114 60 L120 60 L120 -5 L0 -5 L0 74 Z" fill="var(--mk-top)"/>
+      <path d="M2 76 C45 92 78 46 118 58" fill="none" stroke="var(--mk-sweep)" stroke-width="9" stroke-linecap="round"/>
+    </g>
+  </g>
+</defs></svg>
+
+<nav>
+  <a class="brand" href="/">
+    <svg width="26" viewBox="0 0 120 140" style="--mk-top:#0E2033;--mk-bot:#2C8C7D;--mk-sweep:#FDFBF7"><use href="#praesidium"/></svg>
+    <span>PRAESIDIO <b>HEALTH</b></span>
+  </a>
+  <div class="right">
+    <a class="lnk" href="/">Home</a>
+    <a class="cta" href="/#find-care">Book an Appointment</a>
+  </div>
+</nav>
+
+<header class="page">
+  <div class="eyebrow">Patient Education</div>
+  <h1>Understand your condition. <em>Own your decision.</em></h1>
+  <p class="lede">Plain-language explanations, with in-depth guides from the clinical library of Atlantic Spine Center — an independently owned practice in the Praesidio Health network. The best treatment decisions are the ones you fully understand.</p>
+</header>
+
+<section>
+  <h2>Common <em>conditions</em></h2>
+  <p class="sub">What's actually causing the pain — explained without jargon, with in-depth guides from Atlantic Spine Center's clinical library.</p>
+  <div class="grid">
+    <a class="card" href="https://www.atlanticspinecenter.com/conditions/herniated-disc/" target="_blank" rel="noopener">
+      <h3>Herniated Disc</h3>
+      <p>When the soft center of a spinal disc pushes through its outer wall, it can press on nearby nerves — causing back pain, leg pain, numbness, or weakness. Most cases improve without surgery.</p>
+      <span class="go">Read the full guide →</span>
+    </a>
+    <a class="card" href="https://www.atlanticspinecenter.com/conditions/sciatica/" target="_blank" rel="noopener">
+      <h3>Sciatica</h3>
+      <p>Pain that radiates from the lower back down the leg, following the path of the sciatic nerve. Usually a symptom of something else — often a herniated disc or stenosis — not a diagnosis by itself.</p>
+      <span class="go">Read the full guide →</span>
+    </a>
+    <a class="card" href="https://www.atlanticspinecenter.com/conditions/spinal-stenosis/" target="_blank" rel="noopener">
+      <h3>Spinal Stenosis</h3>
+      <p>A narrowing of the spinal canal that squeezes the nerves inside, most common after 50. The hallmark: pain or heaviness in the legs when walking that eases when you sit or lean forward.</p>
+      <span class="go">Read the full guide →</span>
+    </a>
+    <a class="card" href="https://www.atlanticspinecenter.com/conditions/degenerative-disc-disease/" target="_blank" rel="noopener">
+      <h3>Degenerative Disc Disease</h3>
+      <p>Not actually a disease — the natural wearing of spinal discs over time. For some it causes chronic pain and stiffness. Managing it well is about function, not just imaging findings.</p>
+      <span class="go">Read the full guide →</span>
+    </a>
+    <a class="card" href="https://www.atlanticspinecenter.com/conditions/lower-back-pain/" target="_blank" rel="noopener">
+      <h3>Lower Back Pain</h3>
+      <p>The most common reason adults see a spine specialist. Most episodes resolve within weeks — the key is knowing which warning signs mean it's time to be evaluated.</p>
+      <span class="go">Read the full guide →</span>
+    </a>
+    <a class="card" href="https://www.atlanticspinecenter.com/conditions/pinched-nerve/" target="_blank" rel="noopener">
+      <h3>Pinched Nerve</h3>
+      <p>Pressure on a nerve root — from a disc, bone spur, or narrowed canal — that causes pain, tingling, or weakness along that nerve's path. Where you feel it points to where it's pinched.</p>
+      <span class="go">Read the full guide →</span>
+    </a>
+  </div>
+</section>
+
+<section class="treat">
+  <h2>Treatments, <em>least invasive first</em></h2>
+  <p class="sub">The philosophy shared by the network's practices: relieve pain and restore function with the fewest possible medications, procedures, and surgeries.</p>
+  <div class="grid">
+    <a class="card" href="https://www.atlanticspinecenter.com/treatments/diagnosing-back-and-neck-pain/" target="_blank" rel="noopener">
+      <h3>Getting the Diagnosis Right</h3>
+      <p>Everything starts here. How physicians combine your history, a physical exam, and imaging to find the actual pain generator — and why an accurate diagnosis beats a quick prescription.</p>
+      <span class="go">How diagnosis works →</span>
+    </a>
+    <a class="card" href="https://www.atlanticspinecenter.com/treatments/interventional-pain-management/" target="_blank" rel="noopener">
+      <h3>Interventional Pain Management</h3>
+      <p>Image-guided, non-opioid treatments — targeted injections, nerve blocks, radiofrequency ablation — that treat the source of pain rather than masking it.</p>
+      <span class="go">Explore the options →</span>
+    </a>
+    <a class="card" href="https://www.atlanticspinecenter.com/treatments/endoscopic-spine-surgery/" target="_blank" rel="noopener">
+      <h3>Endoscopic Spine Surgery</h3>
+      <p>When surgery is the right answer, it doesn't have to be open surgery. Endoscopic techniques use an incision smaller than a dime — typically with less tissue damage and faster recovery.</p>
+      <span class="go">Learn the technique →</span>
+    </a>
+  </div>
+</section>
+
+<section class="faq">
+  <h2>Questions patients <em>ask us first</em></h2>
+  <div class="faq-list">
+    <details class="faq-item"><summary>Do I need a referral to see a specialist?</summary><p>In most cases, no. You can book directly with any practice in the network. Some insurance plans require a referral for specialist visits, so it is worth a quick check with your plan first.</p></details>
+    <details class="faq-item"><summary>Does back pain always need surgery?</summary><p>No — the large majority of back and neck pain resolves without surgery. The network's practices treat conservatively first: diagnosis, targeted non-surgical care, and surgery only when it is clearly the right tool for a clearly identified problem.</p></details>
+    <details class="faq-item"><summary>Which practice will actually treat me?</summary><p>Always the independent medical practice you choose, such as Atlantic Spine Center. Praesidio Health provides the operations and technology behind the scenes; your care, your records, and your relationship stay with your doctors.</p></details>
+    <details class="faq-item"><summary>Do you take my insurance?</summary><p>Each practice manages its own insurance participation. When you book, the practice's team will verify your coverage before your visit so there are no surprises.</p></details>
+    <details class="faq-item"><summary>What is a second opinion worth?</summary><p>A great deal — especially before spine surgery. If you have been told you need an operation, an independent review of your imaging and history can confirm the plan or surface a less invasive alternative.</p></details>
+    <details class="faq-item"><summary>Is Praesidio Health a hospital system?</summary><p>No. We are a physician-led enterprise that backs independent practices with enterprise-grade operations and technology, so you get the strength of a system with the personal care of an independent doctor.</p></details>
+  </div>
+</section>
+
+<div class="ctaband">
+  <h2>Ready to talk to <em>a physician?</em></h2>
+  <p>Education is the starting point. A diagnosis from a specialist who answers to you — not a hospital system — is the next step.</p>
+  <a class="btn" href="/#find-care">Find a Doctor</a>
+</div>
+
+<p class="note">The content on this page is for general educational purposes only and is not medical advice. It does not create a physician–patient relationship. Always consult a licensed physician about your specific condition. In-depth condition and treatment guides are provided by Atlantic Spine Center, an independently owned member of the Praesidio Health network.</p>
+
+<footer>
+  <div class="row">
+    <div class="brand">
+      <svg width="22" viewBox="0 0 120 140" style="--mk-top:#183654;--mk-bot:#2C8C7D;--mk-sweep:#0E2033"><use href="#praesidium"/></svg>
+      PRAESIDIO HEALTH
+    </div>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="mailto:hello@atlanticspinecenter.com">hello@atlanticspinecenter.com</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Use</a>
+    </div>
+  </div>
+  <div class="legal">
+    © 2026 Praesidio Health LLC. All rights reserved. Praesidio Health supports a network of independently owned healthcare organizations, including Atlantic Spine Center, Advanced Spine &amp; Outpatient Surgical Center, Park Avenue Ambulatory Medical PC, and MD360. Each member of the network is independently owned and operated; medical care is provided solely by licensed clinical entities and their physicians. Praesidio Health does not own, practice through, or contract on behalf of any medical practice or ambulatory surgery center.
+  </div>
+</footer>
+
+</body>
+</html>
