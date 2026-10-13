@@ -64,7 +64,14 @@
   .hero .pop button{background:none;border:none;color:var(--teal-deep);font-weight:600;font-size:13px;cursor:pointer;font-family:var(--sans);padding:0 2px}
   .hero .pop button:hover{color:var(--teal)}
 
-  /* FIND CARE */
+    /* TICKER */
+  .ticker{background:var(--ink);color:var(--paper);overflow:hidden;white-space:nowrap;padding:16px 0;font-size:13px;letter-spacing:.26em;text-transform:uppercase}
+  .ticker .track{display:inline-block;animation:tick 28s linear infinite}
+  .ticker span{margin:0 28px}
+  .ticker .dot{color:var(--gold)}
+  @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* FIND CARE */
   .findcare{background:var(--white);padding:70px 7vw}
   .findcare .eyebrow{font-size:11.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:16px}
   .findcare h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.2vw,42px);line-height:1.1;letter-spacing:-.01em;margin-bottom:12px}
@@ -263,6 +270,14 @@
     <p class="note">Full site launching soon. Serving New Jersey, New York City, and Florida.</p>
   </div>
 </header>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="track">
+    <span>Prevention</span><span class="dot">·</span><span>Innovation</span><span class="dot">·</span><span>Excellence</span><span class="dot">·</span><span>Prevention</span><span class="dot">·</span><span>Innovation</span><span class="dot">·</span><span>Excellence</span><span class="dot">·</span><span>Prevention</span><span class="dot">·</span><span>Innovation</span><span class="dot">·</span><span>Excellence</span><span class="dot">·</span><span>Prevention</span><span class="dot">·</span><span>Innovation</span><span class="dot">·</span><span>Excellence</span><span class="dot">·</span>
+    <span>Prevention</span><span class="dot">·</span><span>Innovation</span><span class="dot">·</span><span>Excellence</span><span class="dot">·</span><span>Prevention</span><span class="dot">·</span><span>Innovation</span><span class="dot">·</span><span>Excellence</span><span class="dot">·</span><span>Prevention</span><span class="dot">·</span><span>Innovation</span><span class="dot">·</span><span>Excellence</span><span class="dot">·</span><span>Prevention</span><span class="dot">·</span><span>Innovation</span><span class="dot">·</span><span>Excellence</span><span class="dot">·</span>
+  </div>
+</div>
 
 <!-- NOTE (internal): placeholder figures below; replace with verified numbers before launch -->
 <div class="proof">
