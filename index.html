@@ -312,13 +312,13 @@
     <button class="fc-pill" data-v="New Jersey">New Jersey</button>
     <button class="fc-pill" data-v="New York">New York</button>
     <button class="fc-pill" data-v="Florida">Florida</button>
-    <button class="fc-pill" data-v="Texas">Texas · Coming Soon</button>
+    <button class="fc-pill" data-v="Connecticut">Connecticut · Coming Soon</button>
   </div></div>
   </div>
 
   <div class="fc-grid" id="fcGrid"></div>
   <div style="text-align:center"><button class="fc-more" id="fcMore" type="button">Show all specialists</button></div>
-  <p class="fc-empty" id="fcEmpty">No providers match that search yet. Texas locations are coming soon. Try New Jersey or Florida, or clear a filter.</p>
+  <p class="fc-empty" id="fcEmpty">No providers match that search yet. Connecticut locations are coming soon. Try New Jersey or Florida, or clear a filter.</p>
   <p class="fc-note">Appointments are booked directly with each independently owned medical practice.</p>
 </section>
 
@@ -331,6 +331,7 @@
     <a href="https://advancedspine.com" target="_blank" rel="noopener"><span class="thumb"><img src="https://advancedspine.com/wp-content/uploads/2021/08/logo.png" alt="Advanced Spine and Outpatient Surgery Center" loading="lazy"></span><span class="t">Advanced Spine<span class="sub">Outpatient surgery center</span></span></a>
   </div>
 </div>
+
 <footer>
   <div class="row">
     <div class="brand">
@@ -359,12 +360,11 @@
     "Atlantic Spine Center": "https://www.atlanticspinecenter.com"
   };
   const PROVIDERS = [
-    {name:"Kaixuan Liu, MD, PhD", spec:"Spine Surgery", practice:"Atlantic Spine Center", locs:["New Jersey","New York","Florida"]},
+    {name:"Kaixuan Liu, MD, PhD", spec:"Pain Management · Endoscopic Spine Surgery", practice:"Atlantic Spine Center", locs:["New Jersey","New York","Florida"]},
     {name:"Praveen Kadimcherla, MD", spec:"Spine Surgery", practice:"Atlantic Spine Center", locs:["New Jersey"]},
     {name:"Fabien Bitan, MD", spec:"Spine Surgery", practice:"Atlantic Spine Center", locs:["New York","New Jersey"]},
     {name:"Kaliq Chang, MD", spec:"Pain Management", practice:"Atlantic Spine Center", locs:["New Jersey"]},
-    {name:"Jason Arora, DO", spec:"Pain Management", practice:"Atlantic Spine Center", locs:["New Jersey"]},
-    {name:"Kaixuan Liu, MD, PhD", spec:"Pain Management", practice:"Atlantic Spine Center", locs:["Florida"]}
+    {name:"Jason Arora, DO", spec:"Pain Management", practice:"Atlantic Spine Center", locs:["New Jersey"]}
   ];
   const fcGrid = document.getElementById('fcGrid');
   const fcEmpty = document.getElementById('fcEmpty');
@@ -376,7 +376,7 @@
   function fcRender(){
     const q = fcSearch.value.trim().toLowerCase();
     const rows = PROVIDERS.filter(p =>
-      (fSpec === "All" || p.spec === fSpec) &&
+      (fSpec === "All" || p.spec.includes(fSpec)) &&
       (fLoc === "All" || p.locs.includes(fLoc)) &&
       (!q || p.name.toLowerCase().includes(q) || p.practice.toLowerCase().includes(q))
     );
@@ -437,12 +437,11 @@
     if(!es[0].isIntersecting) return;
     countUp(document.getElementById('statDocs'), new Set(PROVIDERS.map(p => p.name)).size);
     countUp(document.getElementById('statStates'), new Set(PROVIDERS.flatMap(p => p.locs)).size);
-    countUp(document.getElementById('statSpecs'), new Set(PROVIDERS.map(p => p.spec)).size);
+    countUp(document.getElementById('statSpecs'), ["Spine Surgery","Pain Management"].filter(sp => PROVIDERS.some(p => p.spec.includes(sp))).length);
     statIO.disconnect();
   }, {threshold:.4});
   statIO.observe(document.getElementById('find-care'));
 </script>
 
 </body>
-</html></body>
 </html>
