@@ -305,6 +305,7 @@
     <button class="fc-pill on" data-v="All">All</button>
     <button class="fc-pill" data-v="Spine Surgery">Spine Surgery</button>
     <button class="fc-pill" data-v="Pain Management">Pain Management</button>
+    <button class="fc-pill" data-v="Neurosurgery">Neurosurgery</button>
   </div></div>
     <div class="fc-group"><span class="fc-lab">Location</span>
     <div class="fc-pills" id="fcLoc">
@@ -361,6 +362,7 @@
   };
   const PROVIDERS = [
     {name:"Kaixuan Liu, MD, PhD", spec:"Pain Management · Endoscopic Spine Surgery", practice:"Atlantic Spine Center", locs:["New Jersey","New York","Florida"]},
+    {name:"Aaron Smith, DO, FACOS", spec:"Neurosurgery", practice:"Atlantic Spine Center", locs:["Florida"]},
     {name:"Praveen Kadimcherla, MD", spec:"Spine Surgery", practice:"Atlantic Spine Center", locs:["New Jersey"]},
     {name:"Fabien Bitan, MD", spec:"Spine Surgery", practice:"Atlantic Spine Center", locs:["New York","New Jersey"]},
     {name:"Kaliq Chang, MD", spec:"Pain Management", practice:"Atlantic Spine Center", locs:["New Jersey"]},
@@ -437,7 +439,7 @@
     if(!es[0].isIntersecting) return;
     countUp(document.getElementById('statDocs'), new Set(PROVIDERS.map(p => p.name)).size);
     countUp(document.getElementById('statStates'), new Set(PROVIDERS.flatMap(p => p.locs)).size);
-    countUp(document.getElementById('statSpecs'), ["Spine Surgery","Pain Management"].filter(sp => PROVIDERS.some(p => p.spec.includes(sp))).length);
+    countUp(document.getElementById('statSpecs'), ["Spine Surgery","Pain Management","Neurosurgery"].filter(sp => PROVIDERS.some(p => p.spec.includes(sp))).length);
     statIO.disconnect();
   }, {threshold:.4});
   statIO.observe(document.getElementById('find-care'));
